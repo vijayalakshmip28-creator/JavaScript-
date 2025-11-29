@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script typr="text/javascript">
+        function show()
+        {
+            var ans=parseInt(Math.random()*100);
+            if(ans<=22)
+        {
+            document.getElementById("res").innerHTML=ans;
+        }
+        else{
+            document.getElementById("res").innerHTML="try again out of 22";
+        }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="show()">Click me</button>
+    <h1 id="res"></h1>    
+</body>
+</html>
