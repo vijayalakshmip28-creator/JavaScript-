@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var imgarr=["1.jpg","2.jpg","3.jpeg","4.jpeg"];
+        var i=0;
+        function show()
+        {
+            if(i<imgarr.length-1)
+        {
+            i++;
+
+        }
+          else
+          {
+            i=0;
+          }
+          document.getElementById("imgid").src="./images/"+imgarr[i];
+          document.getElementById("imgname").innerHTML="FCSS";
+          setTimeout(show,1000);
+        }
+    </script>
+    <style type="text/css">
+        div
+        {
+            display: flex;
+            align-items: center;
+            position: relative;
+            
+            
+
+        }
+    </style>
+</head>
+<body onload="show()">
+    <div>
+    <img id="imgid" src="" width="300" height="200">
+    <span id="imgname"></span>
+    </div>
+    
+</body>
+</html>
