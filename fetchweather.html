@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+           <script type="text/javascript">
+          
+        function show()
+        {
+            var cname=document.getElementById("city").value;
+            var api=`https://api.openweathermap.org/data/2.5/weather?q=${cname}&appid=c99e20f637c0adcc55e89e826b874264`;
+
+            // document.getElementById("res").innerHTML=api;
+
+        fetch(api)
+        .then((responce)=>responce.json())
+        .then((data)=>{
+            console.log(data);
+            document.getElementById("res1").innerHTML=data.weather[0].main;
+            document.getElementById("res2").innerHTML=data.weather[0].description;
+            document.getElementById("res3").innerHTML=data.wind.speed;
+            document.getElementById("res4").innerHTML=data.main.temp;
+            document.getElementById("res5").innerHTML=data.main.humidity;
+            document.getElementById("res6").innerHTML=data.sys.country;
+            document.getElementById("res7").innerHTML=data.sys.sunrise;
+            document.getElementById("res8").innerHTML=data.sys.sunset;
+        })
+     
+            .catch((err)=>{
+                console.log(""+err);
+                document.getElementById("sid").style.display="none";
+                document.getElementById("res9").innerHTML="City not found";
+            })
+              }</script>
+       
+       <style type="text/css">
+            
+              body 
+              {
+                  background-image: url("images/weather.jpg");
+              }
+              h2
+              {
+                border-radius: 25px;
+                border: double blue;
+              }
+              
+              #sid 
+              {
+                background-color:transparent yellow;
+                width:65%;
+                border-radius: 10px;
+                box-shadow:  10px 10px 10px 5px blue;
+                opacity:.6;
+              }
+              </style>
+              
+        
+
+
+    
+</head>
+<body>
+    <center>
+        <h2>Live Weather Report by using Cityname created by Viji</h2>
+    <input type="text" id="city" placeholder="Enter city name">
+     <br>
+    <button onclick="show()">CLICKME</button>
+    <div id="res"></div>
+    <div id="sid">
+   <br> Main weather Report:<u><span id="res1"></span></u>
+    <br>Detailed weather Report:<u><span id="res2"></span></u>
+   <br> Wind speed:<u><span id="res3"></span></u>
+    <br>Temperature:<span id="res4"></span>
+   <br> Humidity:<span id="res5"></span>
+   <br> Country:<span id="res6"></span>
+   <br> Sunrise:<span id="res7"></span>
+   <br> Sunset:<span id="res8"></span>
+    </div>
+    <div id="res9"></div>
+    </center>
+    
+
+
+</body>
+</html>

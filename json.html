@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">    //de-normalized
+var stud={
+           sno:1001,
+           sname: 'Vijayalakshmi',
+           marks: ["100","65 ","70","85","100"],
+           result:{
+                     final: "pass",
+                     grade:" Good",
+                     rank:"2"
+                     
+                    }
+                }
+
+document.write("<br> Student no:" +stud.sno);
+document.write("<br> Studentname:" +stud.sname) ;
+// document.write("<br> Marks=== Tamil:"+ stud.marks[0]);
+// document.write("<br>English:"+stud.marks[1]);
+// document.write("<br>Maths:"+stud.marks[2]) ;
+// document.write("<br>Science:"+stud.marks[3]) ;
+// document.write("<br>Social:"+stud.marks[4]) ;
+
+document.write("<br>Result:"+stud.result.final) ;
+document.write("<br>----Grade:"+stud.result.grade) ;
+document.write("<br>----Rank:"+stud.result.rank) ;
+
+            var len=stud.marks.length;
+            for(var i=0;i<len;i++)
+            {
+                document.write(`<br>mark:${i+1} = ${stud.marks[i]}`);
+            }
+  
+
+            for(var s in stud.result)
+            {
+                document.write(`<br>${s} = ${stud.result[s]}`);
+            }
+            //==============================
+            for(var s in stud.result)
+            {
+                document.write(`<br>${s}=${stud.result[s]}`);
+            }
+            for(var z in stud.marks)
+            {
+                document.write(`<br>${z}=${stud.marks[z]}`);
+            }
+
+            //accending/decending
+            document.write("<br>"+stud.marks.sort((a,b)=>a-b));
+            document.write("<br>"+stud.marks.sort((a,b)=>b-a));
+
+            
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
